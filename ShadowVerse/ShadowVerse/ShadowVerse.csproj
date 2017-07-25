@@ -184,6 +184,7 @@
     <Compile Include="Models\member.cs">
       <DependentUpon>ShadowVerse.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Spell.Partial.cs" />
     <Compile Include="Models\ShadowVerse.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
