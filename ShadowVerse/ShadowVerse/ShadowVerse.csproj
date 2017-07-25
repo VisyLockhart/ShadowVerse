@@ -58,6 +58,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -151,6 +153,51 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Amulet.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cardCharm.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cardList.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cardSet.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cardSetData.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\enhance.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Evolved.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Follower.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\member.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShadowVerse.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShadowVerse.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShadowVerse.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShadowVerse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShadowVerse.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spell.cs">
+      <DependentUpon>ShadowVerse.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,7 +220,24 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\ShadowVerse.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShadowVerse.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ShadowVerse.edmx.diagram">
+      <DependentUpon>ShadowVerse.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Models\ShadowVerse.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShadowVerse.Context.cs</LastGenOutput>
+      <DependentUpon>ShadowVerse.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ShadowVerse.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShadowVerse.edmx</DependentUpon>
+      <LastGenOutput>ShadowVerse.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
@@ -207,10 +271,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

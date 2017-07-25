@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ShadowVerseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Amulet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="story" Type="varchar" MaxLength="200" />
+          <Property Name="ability" Type="varchar" MaxLength="100" />
+          <Property Name="imgUrl" Type="varchar" MaxLength="50" />
+          <Property Name="cdRound" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="cardCharm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="story" Type="varchar" MaxLength="200" />
+          <Property Name="effect" Type="varchar" MaxLength="100" />
+          <Property Name="imgUrl" Type="varchar" MaxLength="50" />
+          <Property Name="cdRound" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="cardList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="pakage" Type="varchar" MaxLength="16" />
+          <Property Name="craft" Type="varchar" MaxLength="10" />
+          <Property Name="category" Type="varchar" MaxLength="10" />
+          <Property Name="cost" Type="tinyint" />
+          <Property Name="name" Type="varchar" MaxLength="16" />
+          <Property Name="vials" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="cardSet">
+          <Key>
+            <PropertyRef Name="memberID" />
+            <PropertyRef Name="setID" />
+          </Key>
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="setID" Type="int" Nullable="false" />
+          <Property Name="setName" Type="varchar" MaxLength="50" />
+          <Property Name="editDate" Type="datetime" />
+          <Property Name="seqNo" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="cardSetData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="craft" Type="varchar" MaxLength="10" />
+          <Property Name="link" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="enhance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="cost" Type="tinyint" />
+          <Property Name="ability" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Evolved">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="story" Type="varchar" MaxLength="200" />
+          <Property Name="imgUrl" Type="varchar" MaxLength="50" />
+          <Property Name="attack" Type="tinyint" />
+          <Property Name="defense" Type="tinyint" />
+          <Property Name="ability" Type="varchar" MaxLength="100" />
+          <Property Name="onslaught" Type="char" MaxLength="1" />
+          <Property Name="ward" Type="char" MaxLength="1" />
+          <Property Name="bane" Type="char" MaxLength="1" />
+          <Property Name="lastWords" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Follower">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="story" Type="varchar" MaxLength="200" />
+          <Property Name="imgUrl" Type="varchar" MaxLength="50" />
+          <Property Name="attack" Type="tinyint" />
+          <Property Name="defense" Type="tinyint" />
+          <Property Name="ability" Type="varchar" MaxLength="100" />
+          <Property Name="onslaught" Type="char" MaxLength="1" />
+          <Property Name="ward" Type="char" MaxLength="1" />
+          <Property Name="bane" Type="char" MaxLength="1" />
+          <Property Name="enhance" Type="char" MaxLength="1" />
+          <Property Name="fanfare" Type="varchar" MaxLength="100" />
+          <Property Name="lastWords" Type="varchar" MaxLength="100" />
+          <Property Name="trait" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ac" Type="varchar" MaxLength="16" />
+          <Property Name="pw" Type="varchar" MaxLength="16" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Spell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="story" Type="varchar" MaxLength="200" />
+          <Property Name="ability" Type="varchar" MaxLength="100" />
+          <Property Name="imgUrl" Type="varchar" MaxLength="50" />
+          <Property Name="enhance" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="ShadowVerseModelStoreContainer">
+          <EntitySet Name="Amulet" EntityType="Self.Amulet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cardCharm" EntityType="Self.cardCharm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cardList" EntityType="Self.cardList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cardSet" EntityType="Self.cardSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cardSetData" EntityType="Self.cardSetData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="enhance" EntityType="Self.enhance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evolved" EntityType="Self.Evolved" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Follower" EntityType="Self.Follower" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spell" EntityType="Self.Spell" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShadowVerseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Amulet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cdRound" Type="Byte" />
+        </EntityType>
+        <EntityType Name="cardCharm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="effect" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cdRound" Type="Byte" />
+        </EntityType>
+        <EntityType Name="cardList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="pakage" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="craft" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cost" Type="Byte" />
+          <Property Name="name" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="vials" Type="Byte" />
+        </EntityType>
+        <EntityType Name="cardSet">
+          <Key>
+            <PropertyRef Name="memberID" />
+            <PropertyRef Name="setID" />
+          </Key>
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="setID" Type="Int32" Nullable="false" />
+          <Property Name="setName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="editDate" Type="DateTime" Precision="3" />
+          <Property Name="seqNo" Type="Byte" />
+        </EntityType>
+        <EntityType Name="cardSetData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="craft" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="enhance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="cost" Type="Byte" />
+          <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Evolved">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="attack" Type="Byte" />
+          <Property Name="defense" Type="Byte" />
+          <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="onslaught" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ward" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="bane" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="lastWords" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Follower">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="attack" Type="Byte" />
+          <Property Name="defense" Type="Byte" />
+          <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="onslaught" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ward" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="bane" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="enhance" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="fanfare" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="lastWords" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="trait" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ac" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="pw" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Spell">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="enhance" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ShadowVerseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Amulet" EntityType="Self.Amulet" />
+          <EntitySet Name="cardCharm" EntityType="Self.cardCharm" />
+          <EntitySet Name="cardList" EntityType="Self.cardList" />
+          <EntitySet Name="cardSet" EntityType="Self.cardSet" />
+          <EntitySet Name="cardSetData" EntityType="Self.cardSetData" />
+          <EntitySet Name="enhance" EntityType="Self.enhance" />
+          <EntitySet Name="Evolved" EntityType="Self.Evolved" />
+          <EntitySet Name="Follower" EntityType="Self.Follower" />
+          <EntitySet Name="member" EntityType="Self.member" />
+          <EntitySet Name="Spell" EntityType="Self.Spell" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShadowVerseModelStoreContainer" CdmEntityContainer="ShadowVerseEntities">
+          <EntitySetMapping Name="Amulet">
+            <EntityTypeMapping TypeName="ShadowVerseModel.Amulet">
+              <MappingFragment StoreEntitySet="Amulet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="story" ColumnName="story" />
+                <ScalarProperty Name="ability" ColumnName="ability" />
+                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+                <ScalarProperty Name="cdRound" ColumnName="cdRound" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cardCharm">
+            <EntityTypeMapping TypeName="ShadowVerseModel.cardCharm">
+              <MappingFragment StoreEntitySet="cardCharm">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="story" ColumnName="story" />
+                <ScalarProperty Name="effect" ColumnName="effect" />
+                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+                <ScalarProperty Name="cdRound" ColumnName="cdRound" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cardList">
+            <EntityTypeMapping TypeName="ShadowVerseModel.cardList">
+              <MappingFragment StoreEntitySet="cardList">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pakage" ColumnName="pakage" />
+                <ScalarProperty Name="craft" ColumnName="craft" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="vials" ColumnName="vials" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cardSet">
+            <EntityTypeMapping TypeName="ShadowVerseModel.cardSet">
+              <MappingFragment StoreEntitySet="cardSet">
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="setID" ColumnName="setID" />
+                <ScalarProperty Name="setName" ColumnName="setName" />
+                <ScalarProperty Name="editDate" ColumnName="editDate" />
+                <ScalarProperty Name="seqNo" ColumnName="seqNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cardSetData">
+            <EntityTypeMapping TypeName="ShadowVerseModel.cardSetData">
+              <MappingFragment StoreEntitySet="cardSetData">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="craft" ColumnName="craft" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enhance">
+            <EntityTypeMapping TypeName="ShadowVerseModel.enhance">
+              <MappingFragment StoreEntitySet="enhance">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="ability" ColumnName="ability" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evolved">
+            <EntityTypeMapping TypeName="ShadowVerseModel.Evolved">
+              <MappingFragment StoreEntitySet="Evolved">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="story" ColumnName="story" />
+                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+                <ScalarProperty Name="attack" ColumnName="attack" />
+                <ScalarProperty Name="defense" ColumnName="defense" />
+                <ScalarProperty Name="ability" ColumnName="ability" />
+                <ScalarProperty Name="onslaught" ColumnName="onslaught" />
+                <ScalarProperty Name="ward" ColumnName="ward" />
+                <ScalarProperty Name="bane" ColumnName="bane" />
+                <ScalarProperty Name="lastWords" ColumnName="lastWords" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Follower">
+            <EntityTypeMapping TypeName="ShadowVerseModel.Follower">
+              <MappingFragment StoreEntitySet="Follower">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="story" ColumnName="story" />
+                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+                <ScalarProperty Name="attack" ColumnName="attack" />
+                <ScalarProperty Name="defense" ColumnName="defense" />
+                <ScalarProperty Name="ability" ColumnName="ability" />
+                <ScalarProperty Name="onslaught" ColumnName="onslaught" />
+                <ScalarProperty Name="ward" ColumnName="ward" />
+                <ScalarProperty Name="bane" ColumnName="bane" />
+                <ScalarProperty Name="enhance" ColumnName="enhance" />
+                <ScalarProperty Name="fanfare" ColumnName="fanfare" />
+                <ScalarProperty Name="lastWords" ColumnName="lastWords" />
+                <ScalarProperty Name="trait" ColumnName="trait" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="member">
+            <EntityTypeMapping TypeName="ShadowVerseModel.member">
+              <MappingFragment StoreEntitySet="member">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ac" ColumnName="ac" />
+                <ScalarProperty Name="pw" ColumnName="pw" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spell">
+            <EntityTypeMapping TypeName="ShadowVerseModel.Spell">
+              <MappingFragment StoreEntitySet="Spell">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="story" ColumnName="story" />
+                <ScalarProperty Name="ability" ColumnName="ability" />
+                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
+                <ScalarProperty Name="enhance" ColumnName="enhance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
