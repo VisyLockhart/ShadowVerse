@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ShadowVerse.Models.Follower>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.story)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.attack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.defense)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.onslaught)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ward)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bane)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enhance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fanfare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastWords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trait)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.story)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.attack)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.defense)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.onslaught)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ward)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bane)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.enhance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fanfare)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastWords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trait)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

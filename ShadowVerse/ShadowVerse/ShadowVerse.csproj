@@ -149,6 +149,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\CMS\CMSAreaRegistration.cs" />
+    <Compile Include="Areas\CMS\Controllers\AmuletsController.cs" />
+    <Compile Include="Areas\CMS\Controllers\FollowersController.cs" />
+    <Compile Include="Areas\CMS\Controllers\SpellsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -227,6 +231,24 @@
     <Content Include="Models\ShadowVerse.edmx.diagram">
       <DependentUpon>ShadowVerse.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\CMS\Views\web.config" />
+    <Content Include="Areas\CMS\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\CMS\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\CMS\Views\Amulets\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Amulets\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Amulets\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Amulets\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Amulets\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Spells\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Spells\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Spells\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Spells\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Spells\Index.cshtml" />
+    <Content Include="Areas\CMS\Views\Followers\Create.cshtml" />
+    <Content Include="Areas\CMS\Views\Followers\Delete.cshtml" />
+    <Content Include="Areas\CMS\Views\Followers\Details.cshtml" />
+    <Content Include="Areas\CMS\Views\Followers\Edit.cshtml" />
+    <Content Include="Areas\CMS\Views\Followers\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Models\ShadowVerse.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -271,6 +293,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\CMS\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

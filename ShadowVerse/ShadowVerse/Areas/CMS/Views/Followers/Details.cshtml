@@ -1,0 +1,114 @@
+﻿@model ShadowVerse.Models.Follower
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Follower</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.story)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.story)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.attack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.attack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.defense)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.defense)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.onslaught)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.onslaught)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ward)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bane)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bane)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enhance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enhance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fanfare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fanfare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastWords)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastWords)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trait)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trait)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
