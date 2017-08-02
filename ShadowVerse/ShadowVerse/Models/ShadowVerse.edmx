@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ShadowVerseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ShadowVerseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Amulet">
           <Key>
             <PropertyRef Name="id" />
@@ -12,16 +12,6 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="story" Type="varchar" MaxLength="200" />
           <Property Name="ability" Type="varchar" MaxLength="100" />
-          <Property Name="imgUrl" Type="varchar" MaxLength="50" />
-          <Property Name="cdRound" Type="tinyint" />
-        </EntityType>
-        <EntityType Name="cardCharm">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="story" Type="varchar" MaxLength="200" />
-          <Property Name="effect" Type="varchar" MaxLength="100" />
           <Property Name="imgUrl" Type="varchar" MaxLength="50" />
           <Property Name="cdRound" Type="tinyint" />
         </EntityType>
@@ -118,7 +108,6 @@
         </EntityType>
         <EntityContainer Name="ShadowVerseModelStoreContainer">
           <EntitySet Name="Amulet" EntityType="Self.Amulet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="cardCharm" EntityType="Self.cardCharm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cardList" EntityType="Self.cardList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cardSet" EntityType="Self.cardSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cardSetData" EntityType="Self.cardSetData" Schema="dbo" store:Type="Tables" />
@@ -128,8 +117,7 @@
           <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Spell" EntityType="Self.Spell" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ShadowVerseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -140,16 +128,6 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cdRound" Type="Byte" />
-        </EntityType>
-        <EntityType Name="cardCharm">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="story" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="effect" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="imgUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cdRound" Type="Byte" />
         </EntityType>
@@ -217,7 +195,7 @@
           <Property Name="attack" Type="Byte" />
           <Property Name="defense" Type="Byte" />
           <Property Name="ability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="onslaught" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="onslaught" Type="String" Nullable="true" />
           <Property Name="ward" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="bane" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="enhance" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
@@ -246,7 +224,6 @@
         </EntityType>
         <EntityContainer Name="ShadowVerseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Amulet" EntityType="Self.Amulet" />
-          <EntitySet Name="cardCharm" EntityType="Self.cardCharm" />
           <EntitySet Name="cardList" EntityType="Self.cardList" />
           <EntitySet Name="cardSet" EntityType="Self.cardSet" />
           <EntitySet Name="cardSetData" EntityType="Self.cardSetData" />
@@ -268,17 +245,6 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="story" ColumnName="story" />
                 <ScalarProperty Name="ability" ColumnName="ability" />
-                <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
-                <ScalarProperty Name="cdRound" ColumnName="cdRound" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="cardCharm">
-            <EntityTypeMapping TypeName="ShadowVerseModel.cardCharm">
-              <MappingFragment StoreEntitySet="cardCharm">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="story" ColumnName="story" />
-                <ScalarProperty Name="effect" ColumnName="effect" />
                 <ScalarProperty Name="imgUrl" ColumnName="imgUrl" />
                 <ScalarProperty Name="cdRound" ColumnName="cdRound" />
               </MappingFragment>

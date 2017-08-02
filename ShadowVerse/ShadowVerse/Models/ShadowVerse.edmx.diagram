@@ -5,16 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7df2b337d4bd44328be59aae41ad0bd6" Name="Diagram1">
-        <EntityTypeShape EntityType="ShadowVerseModel.Amulet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.cardCharm" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.cardList" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.cardSet" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.cardSetData" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.enhance" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.Evolved" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.Follower" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.member" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShadowVerseModel.Spell" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.Amulet" Width="1.5" PointX="12.375" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.cardList" Width="1.5" PointX="4.375" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.cardSet" Width="1.5" PointX="0.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.cardSetData" Width="1.5" PointX="2.375" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.enhance" Width="1.5" PointX="12.375" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.Evolved" Width="1.5" PointX="10.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.Follower" Width="1.5" PointX="8.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.member" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShadowVerseModel.Spell" Width="1.5" PointX="14.125" PointY="0.875" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,237 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>牌組編輯</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- #region navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- #endregion -->
+
+    <div class="panel panel-info inputHelperArea" id="filterHelperbar" data-height-rate="0">
+
+        <div id="filterHelper_title">
+            <table class="table table-condensed table-bordered" align="center" style="margin-bottom:5px">
+                <tr class="success">
+                    <td class="col-md-9">
+                        <!-- #region 職業 -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info" disabled>職業</button>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    選擇... <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">All</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">中立</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">精靈</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">皇家護衛</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
+                        
+                        <!-- #region 種類 -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info" disabled>種類</button>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    選擇... <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">All</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">從者</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">法術</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">護符</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
+
+                        <!-- #region 卡包 -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info" disabled>卡包</button>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    選擇... <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">All</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">永久卡</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">標準卡</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">暗影進化</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">巴哈姆特</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">諸神狂嵐</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">夢境奇想</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- #endregion -->
+                        
+                        <!-- #region 費用 -->
+                        <span class="label label-default">費用</span>
+                        <div class="btn-group" style="margin-right:10px">
+                            <button id="" type="button" class="btn btn-primary">
+                                All
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                1
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                2
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                3
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                4
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                5
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                6
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                7
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                8+
+                            </button>
+                        </div>
+                        <!-- #endregion -->
+                        
+                        <!-- #region 稀有度 -->
+                        <span class="label label-default">稀有度</span>
+                        <div class="btn-group">
+                            <button id="" type="button" class="btn btn-primary">
+                                All
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                青銅
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                白銀
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                黃金
+                            </button>
+                            <button id="" type="button" class="btn btn-default">
+                                傳說
+                            </button>
+                        </div>
+                        <!-- #endregion -->                                                
+                    </td>
+
+                    <td class="col-md-2">
+                        <input class="form-control" type="text" placeholder="請輸入卡片名稱" id="inputhelper_text" />
+                        @* TODO:Auto Complete *@
+                    </td>
+                    <td class="col-md-1">
+                        <div class="btn-group pull-right">
+                            <button id="small_InputHelper" type="button" class="btn btn-sm btn-default" title="縮小過濾器">
+                                <i class="fa fa-compress fa-lg" aria-hidden="true"></i>
+                            </button>
+                            <button id="medium_InputHelper" type="button" class="btn btn-default btn-sm" title="展開過濾器">
+                                <i class="fa fa-expand fa-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>            
+        </div>
+        <div id="inputhelper_content">
+            @* 輔助輸入的TextBox行 *@
+
+            <div class="inputhelper_selarea">
+                <div id="inputhelper-item-container">
+                    @*左邊選單*@
+                    <div class="col-sm-3" style="overflow:auto;" id="inputhelper-tab-menu">
+                        <div class="tab-content" id="inputhelper_menu">
+                        </div>
+                        <br>
+                    </div>
+                    @*右邊實際開的項目*@
+                    <div class="col-sm-9 tab-content" style="overflow:auto;" id="inputhelper-tab-content">
+                        <div class="tab-content" id="inputhelper_menu_content" data-divbindingStatus="N">
+                            <div class="tab-pane fade" id="template_MenuContent_Med" data-divbindingcount="0">
+                                <table class="table table-bordered text-info">
+                                    <tr class="info"><th>選</th><th>劑型</th><th>學名</th><th>商品名</th><th>規格</th><th>單位</th><th>自費</th><th>健保</th></tr>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane fade" id="template_MenuContent_Lab" data-divbindingcount="0">
+                                <table class="table table-bordered text-info">
+                                    <tr class="info"><th>選</th><th>批價代碼</th><th>檢驗項目名稱</th><th>檢體</th><th>檢驗類別</th><th>檢驗類別名稱</th></tr>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane fade" id="template_MenuContent_Exam" data-divbindingcount="0">
+                                <table class="table table-bordered text-info">
+                                    <tr class="info"><th>選</th><th>科別</th><th>類別</th><th>代碼</th><th>名稱</th></tr>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane fade" id="template_MenuContent_AsOrder" data-divbindingcount="0">
+                                <table class="table table-bordered text-info">
+                                    <tr class="info"><th>選</th><th>代碼</th><th>名稱</th></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

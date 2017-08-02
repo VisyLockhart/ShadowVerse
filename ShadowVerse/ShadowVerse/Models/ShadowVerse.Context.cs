@@ -26,7 +26,6 @@ namespace ShadowVerse.Models
         }
     
         public virtual DbSet<Amulet> Amulet { get; set; }
-        public virtual DbSet<cardCharm> cardCharm { get; set; }
         public virtual DbSet<cardList> cardList { get; set; }
         public virtual DbSet<cardSet> cardSet { get; set; }
         public virtual DbSet<cardSetData> cardSetData { get; set; }
